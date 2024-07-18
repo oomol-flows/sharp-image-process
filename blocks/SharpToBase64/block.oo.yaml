@@ -1,0 +1,22 @@
+type: task_block
+title: SharpToBase64
+executor:
+  name: node_executor
+  entry: index.ts
+inputs_def:
+  - handle: sharp
+    json_schema:
+      type:
+        - string
+        - number
+        - integer
+        - boolean
+        - object
+        - array
+        - "null"
+      ui:widget: any
+      contentMediaType: oomol/var
+outputs_def:
+  - handle: base64
+    json_schema:
+      type: string

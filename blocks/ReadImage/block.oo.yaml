@@ -1,0 +1,24 @@
+type: task_block
+title: ReadImage
+executor:
+  name: node_executor
+  entry: index.ts
+inputs_def:
+  - handle: image
+    json_schema:
+      type: string
+      ui:widget: file
+outputs_def:
+  - handle: sharp
+    json_schema:
+      contentMediaType: oomol/var
+      type:
+        - string
+        - number
+        - integer
+        - boolean
+        - object
+        - array
+        - "null"
+      ui:widget: any
+icon: /oomol-storage/sharp_logo.png

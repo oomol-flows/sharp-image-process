@@ -1,0 +1,196 @@
+nodes:
+  - task: ../../blocks/ReadImage/block.oo.yaml
+    node_id: 30fa10f9-dab2-42ed-9cd3-5d12e5e31f80
+    inputs_from:
+      - handle: image
+        value: /oomol-storage/image/unsplash.jpg
+  - task: ../../blocks/Flop/block.oo.yaml
+    node_id: c0643c56-28d7-45bb-83d2-7b8207a8b0cc
+    inputs_from:
+      - handle: sharp
+        from_node:
+          - node_id: 30fa10f9-dab2-42ed-9cd3-5d12e5e31f80
+            output_handle: sharp
+  - task: preview::image_preview
+    node_id: 58083dbc-d842-4666-afeb-45670e8e3428
+    inputs_from:
+      - handle: file
+        from_node:
+          - node_id: e8d06b85-836d-4796-bb6c-f0654967e714
+            output_handle: base64
+  - task: ../../blocks/SharpToBase64/block.oo.yaml
+    node_id: e8d06b85-836d-4796-bb6c-f0654967e714
+    inputs_from:
+      - handle: sharp
+        from_node:
+          - node_id: be86c63e-c4f8-4df9-9e2f-9a4fdc9a656e
+            output_handle: sharp
+  - task: ../../blocks/Flip/block.oo.yaml
+    node_id: 9882970b-9ba0-48e7-87d8-b84128ed95e0
+    inputs_from:
+      - handle: sharp
+        from_node:
+          - node_id: 30fa10f9-dab2-42ed-9cd3-5d12e5e31f80
+            output_handle: sharp
+  - task: ../../blocks/SharpToBase64/block.oo.yaml
+    node_id: 87d8b841-28ed-45e0-9a61-2ac521fa7a06
+    inputs_from:
+      - handle: sharp
+        from_node:
+          - node_id: db3069b9-388b-4169-9dc8-f4d0764152bc
+            output_handle: sharp
+  - task: preview::image_preview
+    node_id: 9a612ac5-21fa-4a06-b57f-eac375b04830
+    inputs_from:
+      - handle: file
+        from_node:
+          - node_id: 87d8b841-28ed-45e0-9a61-2ac521fa7a06
+            output_handle: base64
+  - task: ../../blocks/ResizeImage/block.oo.yaml
+    node_id: 5f5e75b0-1e48-423f-ad58-8e3bbc0046a5
+    inputs_from:
+      - handle: sharp
+        from_node:
+          - node_id: 30fa10f9-dab2-42ed-9cd3-5d12e5e31f80
+            output_handle: sharp
+      - handle: width
+        value: 200
+      - handle: height
+        value: 500
+  - task: ../../blocks/SharpToBase64/block.oo.yaml
+    node_id: 09e217a0-df61-4387-aa3c-8a26c572f6f1
+    inputs_from:
+      - handle: sharp
+        from_node:
+          - node_id: 5f5e75b0-1e48-423f-ad58-8e3bbc0046a5
+            output_handle: sharp
+  - task: preview::image_preview
+    node_id: 876a3c8a-26c5-42f6-b103-a9ecb77951ce
+    inputs_from:
+      - handle: file
+        from_node:
+          - node_id: 09e217a0-df61-4387-aa3c-8a26c572f6f1
+            output_handle: base64
+  - task: ../../blocks/GreyScale/block.oo.yaml
+    node_id: 869e1151-2dcf-44b1-b6c9-e58647558642
+    inputs_from:
+      - handle: sharp
+        from_node:
+          - node_id: 5f5e75b0-1e48-423f-ad58-8e3bbc0046a5
+            output_handle: sharp
+  - task: ../../blocks/SharpToBase64/block.oo.yaml
+    node_id: ac276ae6-3ee1-46fa-9988-1aea371de269
+    inputs_from:
+      - handle: sharp
+        from_node:
+          - node_id: 869e1151-2dcf-44b1-b6c9-e58647558642
+            output_handle: sharp
+  - task: preview::image_preview
+    node_id: 2f4232ee-2a9e-47ae-b4d6-a287c1adef14
+    inputs_from:
+      - handle: file
+        from_node:
+          - node_id: ac276ae6-3ee1-46fa-9988-1aea371de269
+            output_handle: base64
+  - task: ../../blocks/GreyScale/block.oo.yaml
+    node_id: db3069b9-388b-4169-9dc8-f4d0764152bc
+    inputs_from:
+      - handle: sharp
+        from_node:
+          - node_id: 9882970b-9ba0-48e7-87d8-b84128ed95e0
+            output_handle: sharp
+  - task: ../../blocks/Rotate/block.oo.yaml
+    node_id: f2aac3da-aad9-4582-95c3-790d18c65080
+    inputs_from:
+      - handle: rotate
+        value: 260
+      - handle: sharp
+        value:
+        from_node:
+          - node_id: 5f5e75b0-1e48-423f-ad58-8e3bbc0046a5
+            output_handle: sharp
+  - task: ../../blocks/SharpToBase64/block.oo.yaml
+    node_id: f78b8f18-8480-404d-b40f-72c79a3c98ea
+    inputs_from:
+      - handle: sharp
+        from_node:
+          - node_id: f2aac3da-aad9-4582-95c3-790d18c65080
+            output_handle: sharp
+  - task: preview::image_preview
+    node_id: 452e12de-fe3f-4786-a5fb-b0fb8a86dbb8
+    inputs_from:
+      - handle: file
+        from_node:
+          - node_id: f78b8f18-8480-404d-b40f-72c79a3c98ea
+            output_handle: base64
+  - task: ../../blocks/Rotate/block.oo.yaml
+    node_id: be86c63e-c4f8-4df9-9e2f-9a4fdc9a656e
+    inputs_from:
+      - handle: sharp
+        from_node:
+          - node_id: c0643c56-28d7-45bb-83d2-7b8207a8b0cc
+            output_handle: sharp
+      - handle: rotate
+        value: 0
+  - task: ../../blocks/ToFormat/block.oo.yaml
+    node_id: 54a54d2a-a0fb-4a62-a41f-39f3d64ff7e7
+    inputs_from:
+      - handle: sharp
+        from_node:
+          - node_id: 5f5e75b0-1e48-423f-ad58-8e3bbc0046a5
+            output_handle: sharp
+      - handle: name
+        value: maomao1
+      - handle: address
+        value: /oomol-storage/image
+      - handle: formate
+        value: png
+  - task: ../../blocks/ToFormat/block.oo.yaml
+    node_id: 17ac3a95-d572-430c-9015-223d2075765f
+    inputs_from:
+      - handle: sharp
+        from_node:
+          - node_id: db3069b9-388b-4169-9dc8-f4d0764152bc
+            output_handle: sharp
+      - handle: name
+        value: gray
+      - handle: address
+        value: /oomol-storage/image
+      - handle: formate
+        value: jpeg
+  - task: ../../blocks/ToFormat/block.oo.yaml
+    node_id: fe87fc2b-4b8c-4575-9951-034ae6e61562
+    inputs_from:
+      - handle: sharp
+        from_node:
+          - node_id: 869e1151-2dcf-44b1-b6c9-e58647558642
+            output_handle: sharp
+      - handle: name
+        value: putao
+      - handle: address
+        value: /oomol-storage
+      - handle: formate
+        value: png
+  - task: ../../blocks/Blur/block.oo.yaml
+    node_id: ceb8371d-0ce3-4919-b12e-3d304f44f196
+    inputs_from:
+      - handle: sharp
+        from_node:
+          - node_id: c0643c56-28d7-45bb-83d2-7b8207a8b0cc
+            output_handle: sharp
+      - handle: sigma
+        value: 50
+  - task: ../../blocks/SharpToBase64/block.oo.yaml
+    node_id: c9f7b5c1-1e1b-4161-bff2-5cf3f43f14b5
+    inputs_from:
+      - handle: sharp
+        from_node:
+          - node_id: ceb8371d-0ce3-4919-b12e-3d304f44f196
+            output_handle: sharp
+  - task: preview::image_preview
+    node_id: bc2096c5-596d-4bfc-b23e-d8b4e3581ded
+    inputs_from:
+      - handle: file
+        from_node:
+          - node_id: c9f7b5c1-1e1b-4161-bff2-5cf3f43f14b5
+            output_handle: base64

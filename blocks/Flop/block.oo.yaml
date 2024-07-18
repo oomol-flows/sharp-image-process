@@ -1,0 +1,31 @@
+type: task_block
+title: Flop
+executor:
+  name: node_executor
+  entry: index.ts
+inputs_def:
+  - handle: sharp
+    json_schema:
+      contentMediaType: oomol/var
+      type:
+        - string
+        - number
+        - integer
+        - boolean
+        - object
+        - array
+        - "null"
+      ui:widget: any
+outputs_def:
+  - handle: sharp
+    json_schema:
+      contentMediaType: oomol/var
+      type:
+        - string
+        - number
+        - integer
+        - boolean
+        - object
+        - array
+        - "null"
+      ui:widget: any
