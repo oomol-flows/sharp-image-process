@@ -1,8 +1,8 @@
-type: task_block
 title: ToFile
 executor:
-  name: node_executor
-  entry: index.ts
+  name: nodejs
+  options:
+    entry: index.ts
 inputs_def:
   - handle: sharp
     json_schema:

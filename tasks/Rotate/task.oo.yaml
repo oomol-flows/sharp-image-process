@@ -1,0 +1,38 @@
+title: Rotate
+executor:
+  name: nodejs
+  options:
+    entry: index.ts
+inputs_def:
+  - handle: sharp
+    json_schema:
+      contentMediaType: oomol/var
+      type:
+        - string
+        - number
+        - integer
+        - boolean
+        - object
+        - array
+        - "null"
+      ui:widget: any
+  - handle: rotate
+    json_schema:
+      type: number
+      ui:options:
+        step: 1
+      minimum: 0
+      maximum: 360
+outputs_def:
+  - handle: sharp
+    json_schema:
+      contentMediaType: oomol/var
+      type:
+        - string
+        - number
+        - integer
+        - boolean
+        - object
+        - array
+        - "null"
+      ui:widget: any
