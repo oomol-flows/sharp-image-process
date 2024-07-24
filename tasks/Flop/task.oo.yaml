@@ -1,8 +1,8 @@
-type: task_block
-title: Rotate
+title: Flop
 executor:
-  name: node_executor
-  entry: index.ts
+  name: nodejs
+  options:
+    entry: index.ts
 inputs_def:
   - handle: sharp
     json_schema:
@@ -16,13 +16,6 @@ inputs_def:
         - array
         - "null"
       ui:widget: any
-  - handle: rotate
-    json_schema:
-      type: number
-      ui:options:
-        step: 1
-      minimum: 0
-      maximum: 360
 outputs_def:
   - handle: sharp
     json_schema:

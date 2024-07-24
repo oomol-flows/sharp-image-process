@@ -1,8 +1,8 @@
-type: task_block
-title: Flip
+title: ResizeImage
 executor:
-  name: node_executor
-  entry: index.ts
+  name: nodejs
+  options:
+    entry: index.ts
 inputs_def:
   - handle: sharp
     json_schema:
@@ -16,6 +16,12 @@ inputs_def:
         - array
         - "null"
       ui:widget: any
+  - handle: width
+    json_schema:
+      type: number
+  - handle: height
+    json_schema:
+      type: number
 outputs_def:
   - handle: sharp
     json_schema:
@@ -29,3 +35,4 @@ outputs_def:
         - array
         - "null"
       ui:widget: any
+icon: ./icon.jpeg
