@@ -16,6 +16,7 @@ inputs_def:
         - array
         - "null"
       ui:widget: any
+    name: ""
 outputs_def:
   - handle: sharp
     json_schema:
@@ -29,3 +30,4 @@ outputs_def:
         - array
         - "null"
       ui:widget: any
+render: ./oo-render/dist/render.mjs

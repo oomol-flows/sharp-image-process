@@ -36,3 +36,4 @@ outputs_def:
         - array
         - "null"
       ui:widget: any
+render: ./oo-render/dist/render.mjs

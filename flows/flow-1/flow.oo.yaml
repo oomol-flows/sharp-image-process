@@ -11,20 +11,6 @@ nodes:
         from_node:
           - node_id: ReadImage#1
             output_handle: sharp
-  - task: preview::image_preview
-    node_id: image_preview#1
-    inputs_from:
-      - handle: file
-        from_node:
-          - node_id: SharpToBase64#1
-            output_handle: base64
-  - task: self::SharpToBase64
-    node_id: SharpToBase64#1
-    inputs_from:
-      - handle: sharp
-        from_node:
-          - node_id: Rotate#2
-            output_handle: sharp
   - task: self::Flip
     node_id: Flip#1
     inputs_from:
@@ -32,20 +18,6 @@ nodes:
         from_node:
           - node_id: ReadImage#1
             output_handle: sharp
-  - task: self::SharpToBase64
-    node_id: SharpToBase64#2
-    inputs_from:
-      - handle: sharp
-        from_node:
-          - node_id: GreyScale#2
-            output_handle: sharp
-  - task: preview::image_preview
-    node_id: image_preview#2
-    inputs_from:
-      - handle: file
-        from_node:
-          - node_id: SharpToBase64#2
-            output_handle: base64
   - task: self::ResizeImage
     node_id: ResizeImage#1
     inputs_from:
@@ -54,23 +26,9 @@ nodes:
           - node_id: ReadImage#1
             output_handle: sharp
       - handle: width
-        value: 200
+        value: 375
       - handle: height
         value: 500
-  - task: self::SharpToBase64
-    node_id: SharpToBase64#3
-    inputs_from:
-      - handle: sharp
-        from_node:
-          - node_id: ResizeImage#1
-            output_handle: sharp
-  - task: preview::image_preview
-    node_id: image_preview#3
-    inputs_from:
-      - handle: file
-        from_node:
-          - node_id: SharpToBase64#3
-            output_handle: base64
   - task: self::GreyScale
     node_id: GreyScale#1
     inputs_from:
@@ -78,20 +36,6 @@ nodes:
         from_node:
           - node_id: ResizeImage#1
             output_handle: sharp
-  - task: self::SharpToBase64
-    node_id: SharpToBase64#4
-    inputs_from:
-      - handle: sharp
-        from_node:
-          - node_id: GreyScale#1
-            output_handle: sharp
-  - task: preview::image_preview
-    node_id: image_preview#4
-    inputs_from:
-      - handle: file
-        from_node:
-          - node_id: SharpToBase64#4
-            output_handle: base64
   - task: self::GreyScale
     node_id: GreyScale#2
     inputs_from:
@@ -109,20 +53,6 @@ nodes:
         from_node:
           - node_id: ResizeImage#1
             output_handle: sharp
-  - task: self::SharpToBase64
-    node_id: SharpToBase64#5
-    inputs_from:
-      - handle: sharp
-        from_node:
-          - node_id: Rotate#1
-            output_handle: sharp
-  - task: preview::image_preview
-    node_id: image_preview#5
-    inputs_from:
-      - handle: file
-        from_node:
-          - node_id: SharpToBase64#5
-            output_handle: base64
   - task: self::Rotate
     node_id: Rotate#2
     inputs_from:
@@ -132,45 +62,6 @@ nodes:
             output_handle: sharp
       - handle: rotate
         value: 0
-  - task: self::ToFormat
-    node_id: ToFormat#1
-    inputs_from:
-      - handle: sharp
-        from_node:
-          - node_id: ResizeImage#1
-            output_handle: sharp
-      - handle: name
-        value: maomao1
-      - handle: address
-        value: /oomol-storage/image
-      - handle: formate
-        value: png
-  - task: self::ToFormat
-    node_id: ToFormat#2
-    inputs_from:
-      - handle: sharp
-        from_node:
-          - node_id: GreyScale#2
-            output_handle: sharp
-      - handle: name
-        value: gray
-      - handle: address
-        value: /oomol-storage/image
-      - handle: formate
-        value: jpeg
-  - task: self::ToFormat
-    node_id: ToFormat#3
-    inputs_from:
-      - handle: sharp
-        from_node:
-          - node_id: GreyScale#1
-            output_handle: sharp
-      - handle: name
-        value: putao
-      - handle: address
-        value: /oomol-storage
-      - handle: formate
-        value: png
   - task: self::Blur
     node_id: Blur#1
     inputs_from:
@@ -180,17 +71,17 @@ nodes:
             output_handle: sharp
       - handle: sigma
         value: 50
-  - task: self::SharpToBase64
-    node_id: SharpToBase64#6
+  - task: LLM::chatai
+    title: "Chat AI #2"
+    node_id: chatai#2
     inputs_from:
-      - handle: sharp
-        from_node:
-          - node_id: Blur#1
-            output_handle: sharp
-  - task: preview::image_preview
-    node_id: image_preview#6
-    inputs_from:
-      - handle: file
-        from_node:
-          - node_id: SharpToBase64#6
-            output_handle: base64
+      - handle: source
+        value: OpenAI
+      - handle: role
+        value: user
+      - handle: text
+        value: ""
+      - handle: temperature
+        value: 0.3
+      - handle: api_key
+        value: ""
