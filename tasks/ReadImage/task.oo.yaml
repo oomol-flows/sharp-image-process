@@ -22,3 +22,5 @@ outputs_def:
         - "null"
       ui:widget: any
 icon: ./icon.jpeg
+description: ""
+render: ./oo-render/dist/render.mjs

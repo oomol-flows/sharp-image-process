@@ -1,0 +1,24 @@
+nodes:
+  - task: self::ReadImage
+    title: "ReadImage #1"
+    node_id: ReadImage#1
+    inputs_from:
+      - handle: image
+        value: /oomol-storage/image/unsplash.jpg
+  - task: self::GreyScale
+    title: "GreyScale #1"
+    node_id: GreyScale#1
+    inputs_from:
+      - handle: sharp
+        from_node:
+          - node_id: ReadImage#1
+            output_handle: sharp
+  - task: self::Sharpen
+    node_id: Sharpen#2
+    inputs_from:
+      - handle: sharp
+        from_node:
+          - node_id: GreyScale#1
+            output_handle: sharp
+      - handle: sigma
+        value: 5

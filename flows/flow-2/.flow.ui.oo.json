@@ -1,0 +1,45 @@
+{
+  "nodes": [
+    {
+      "id": "ReadImage#1",
+      "contentWidth": 200,
+      "selected": false,
+      "dragging": false,
+      "position": {
+        "x": 1079,
+        "y": 364
+      },
+      "positionAbsolute": {
+        "x": 1079,
+        "y": 364
+      },
+      "width": 214,
+      "height": 444
+    },
+    {
+      "id": "GreyScale#1",
+      "contentWidth": 200,
+      "selected": false,
+      "dragging": false,
+      "position": {
+        "x": 1365,
+        "y": 403
+      },
+      "width": 214,
+      "height": 444
+    },
+    {
+      "id": "Sharpen#2",
+      "contentWidth": 200,
+      "selected": false,
+      "dragging": false,
+      "position": {
+        "x": 1716,
+        "y": 442
+      },
+      "width": 214,
+      "height": 205
+    }
+  ],
+  "edges": []
+}

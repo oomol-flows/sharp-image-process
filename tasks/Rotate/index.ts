@@ -7,6 +7,9 @@ type Outputs = Readonly<{ sharp: Sharp }>;
 
 export default async function(inputs: Inputs, context: BlockContext): Promise<Outputs> {
   const sharp = inputs.sharp.clone().rotate(inputs.rotate)
+  const obj = await sharp.toBuffer({resolveWithObject: true})
+  const base64 = `data:image/png;base64,${obj.data.toString("base64")}`
+  context.sendMessage({type: "image", data: base64})
   return {
     sharp: sharp,
   }

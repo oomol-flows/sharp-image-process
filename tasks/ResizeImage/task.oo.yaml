@@ -36,3 +36,4 @@ outputs_def:
         - "null"
       ui:widget: any
 icon: ./icon.jpeg
+render: ./oo-render/dist/render.mjs
