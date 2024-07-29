@@ -1,9 +1,4 @@
 nodes:
-  - task: self::ReadImage
-    node_id: ReadImage#1
-    inputs_from:
-      - handle: image
-        value: /oomol-storage/image/unsplash.jpg
   - task: self::Flop
     node_id: Flop#1
     inputs_from:
@@ -26,7 +21,7 @@ nodes:
           - node_id: ReadImage#1
             output_handle: sharp
       - handle: width
-        value: 375
+        value: 465
       - handle: height
         value: 500
   - task: self::GreyScale
@@ -47,7 +42,7 @@ nodes:
     node_id: Rotate#1
     inputs_from:
       - handle: rotate
-        value: 260
+        value: 237
       - handle: sharp
         value:
         from_node:
@@ -71,17 +66,9 @@ nodes:
             output_handle: sharp
       - handle: sigma
         value: 50
-  - task: LLM::chatai
-    title: "Chat AI #2"
-    node_id: chatai#2
+  - task: self::ReadImage
+    title: "ReadImage #1"
+    node_id: ReadImage#1
     inputs_from:
-      - handle: source
-        value: OpenAI
-      - handle: role
-        value: user
-      - handle: text
-        value: ""
-      - handle: temperature
-        value: 0.3
-      - handle: api_key
-        value: ""
+      - handle: image
+        value: /oomol-storage/annie-spratt-Iju9-wylmLo-unsplash.jpg

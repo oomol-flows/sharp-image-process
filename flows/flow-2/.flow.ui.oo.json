@@ -14,7 +14,7 @@
         "y": 364
       },
       "width": 214,
-      "height": 444
+      "height": 290
     },
     {
       "id": "GreyScale#1",
@@ -26,7 +26,7 @@
         "y": 403
       },
       "width": 214,
-      "height": 444
+      "height": 290
     },
     {
       "id": "Sharpen#2",
@@ -38,8 +38,49 @@
         "y": 442
       },
       "width": 214,
-      "height": 205
+      "height": 318
     }
   ],
-  "edges": []
+  "edges": [
+    {
+      "id": "72ffdcdf-5084-4886-9101-89b9d01b4737",
+      "selected": false,
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "ReadImage#1",
+            "output_handle": "sharp"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "GreyScale#1",
+            "input_handle": "sharp"
+          }
+        }
+      }
+    },
+    {
+      "id": "ffdcdf50-84f8-46d1-8189-b9d01b4737ce",
+      "selected": false,
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "GreyScale#1",
+            "output_handle": "sharp"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "Sharpen#2",
+            "input_handle": "sharp"
+          }
+        }
+      }
+    }
+  ]
 }

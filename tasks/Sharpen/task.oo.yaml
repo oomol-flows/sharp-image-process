@@ -33,4 +33,3 @@ outputs_def:
         - array
         - "null"
       contentMediaType: oomol/var
-render: ./oo-render/dist/render.mjs
