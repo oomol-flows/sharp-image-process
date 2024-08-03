@@ -71,4 +71,4 @@ nodes:
     node_id: ReadImage#1
     inputs_from:
       - handle: image
-        value: /oomol-storage/annie-spratt-Iju9-wylmLo-unsplash.jpg
+        value: /oomol-storage/pptx.png

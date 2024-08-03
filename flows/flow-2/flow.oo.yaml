@@ -4,7 +4,7 @@ nodes:
     node_id: ReadImage#1
     inputs_from:
       - handle: image
-        value: /oomol-storage/manim.png
+        value: /oomol-storage/截屏2024-07-28 09.39.03.png
   - task: self::GreyScale
     title: "GreyScale #1"
     node_id: GreyScale#1

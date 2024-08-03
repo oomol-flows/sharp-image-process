@@ -14,7 +14,7 @@
         "y": -65
       },
       "width": 214,
-      "height": 389
+      "height": 92
     },
     {
       "id": "Flip#1",
@@ -30,7 +30,7 @@
         "y": 520
       },
       "width": 214,
-      "height": 389
+      "height": 92
     },
     {
       "id": "ResizeImage#1",
@@ -46,7 +46,7 @@
         "y": -871
       },
       "width": 214,
-      "height": 361
+      "height": 148
     },
     {
       "id": "GreyScale#1",
@@ -62,7 +62,7 @@
         "y": -936
       },
       "width": 214,
-      "height": 305
+      "height": 92
     },
     {
       "id": "GreyScale#2",
@@ -78,7 +78,7 @@
         "y": 767
       },
       "width": 214,
-      "height": 389
+      "height": 92
     },
     {
       "id": "Rotate#1",
@@ -94,7 +94,7 @@
         "y": -663
       },
       "width": 214,
-      "height": 322
+      "height": 120
     },
     {
       "id": "Rotate#2",
@@ -110,7 +110,7 @@
         "y": 182
       },
       "width": 214,
-      "height": 417
+      "height": 120
     },
     {
       "id": "Blur#1",
@@ -126,7 +126,7 @@
         "y": -169
       },
       "width": 214,
-      "height": 417
+      "height": 120
     },
     {
       "id": "ReadImage#1",
@@ -136,7 +136,7 @@
         "y": -572
       },
       "width": 214,
-      "height": 389
+      "height": 92
     }
   ],
   "edges": [
