@@ -14,7 +14,7 @@
         "y": 364
       },
       "width": 214,
-      "height": 290
+      "height": 174
     },
     {
       "id": "GreyScale#1",
@@ -26,7 +26,7 @@
         "y": 403
       },
       "width": 214,
-      "height": 290
+      "height": 174
     },
     {
       "id": "Sharpen#2",
@@ -38,7 +38,7 @@
         "y": 442
       },
       "width": 214,
-      "height": 318
+      "height": 202
     }
   ],
   "edges": [
