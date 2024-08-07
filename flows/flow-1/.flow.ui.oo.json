@@ -6,15 +6,15 @@
       "selected": false,
       "dragging": false,
       "position": {
-        "x": -299,
-        "y": -65
+        "x": -293.1991071498703,
+        "y": -306.7038687554028
       },
       "positionAbsolute": {
-        "x": -299,
-        "y": -65
+        "x": -293.1991071498703,
+        "y": -306.7038687554028
       },
       "width": 214,
-      "height": 389
+      "height": 92
     },
     {
       "id": "Flip#1",
@@ -22,15 +22,15 @@
       "selected": false,
       "dragging": false,
       "position": {
-        "x": -351,
-        "y": 520
+        "x": -304.5928571989627,
+        "y": 210
       },
       "positionAbsolute": {
-        "x": -351,
-        "y": 520
+        "x": -304.5928571989627,
+        "y": 204.81815514295482
       },
       "width": 214,
-      "height": 389
+      "height": 92
     },
     {
       "id": "ResizeImage#1",
@@ -46,39 +46,7 @@
         "y": -871
       },
       "width": 214,
-      "height": 361
-    },
-    {
-      "id": "GreyScale#1",
-      "contentWidth": 200,
-      "selected": false,
-      "dragging": false,
-      "position": {
-        "x": 819,
-        "y": -936
-      },
-      "positionAbsolute": {
-        "x": 819,
-        "y": -936
-      },
-      "width": 214,
-      "height": 305
-    },
-    {
-      "id": "GreyScale#2",
-      "contentWidth": 200,
-      "selected": false,
-      "dragging": false,
-      "position": {
-        "x": 91,
-        "y": 767
-      },
-      "positionAbsolute": {
-        "x": 91,
-        "y": 767
-      },
-      "width": 214,
-      "height": 389
+      "height": 148
     },
     {
       "id": "Rotate#1",
@@ -94,7 +62,7 @@
         "y": -663
       },
       "width": 214,
-      "height": 322
+      "height": 120
     },
     {
       "id": "Rotate#2",
@@ -110,7 +78,7 @@
         "y": 182
       },
       "width": 214,
-      "height": 417
+      "height": 120
     },
     {
       "id": "Blur#1",
@@ -126,7 +94,7 @@
         "y": -169
       },
       "width": 214,
-      "height": 417
+      "height": 120
     },
     {
       "id": "ReadImage#1",
@@ -136,7 +104,43 @@
         "y": -572
       },
       "width": 214,
-      "height": 389
+      "height": 92
+    },
+    {
+      "id": "GreyScale#4",
+      "contentWidth": 200,
+      "position": {
+        "x": -22.31473359809388,
+        "y": 457.96517805946564
+      },
+      "width": 214,
+      "height": 92
+    },
+    {
+      "id": "Sharpen#1",
+      "contentWidth": 200,
+      "position": {
+        "x": 490.1852664019061,
+        "y": -684.0348219405344
+      },
+      "width": 214,
+      "height": 120
+    },
+    {
+      "id": "+typescript#1",
+      "contentWidth": 492.16796875,
+      "selected": true,
+      "dragging": false,
+      "position": {
+        "x": 898.1852664019061,
+        "y": -471
+      },
+      "positionAbsolute": {
+        "x": 898.1852664019061,
+        "y": -471
+      },
+      "width": 506,
+      "height": 466
     }
   ],
   "edges": [
@@ -199,45 +203,6 @@
       }
     },
     {
-      "id": "2e1db8e3-ca59-4ed0-a469-1252b8ed55a7",
-      "selected": false,
-      "connection": {
-        "from": {
-          "type": "from_node",
-          "source": {
-            "node_id": "ResizeImage#1",
-            "output_handle": "sharp"
-          }
-        },
-        "to": {
-          "type": "to_node",
-          "target": {
-            "node_id": "GreyScale#1",
-            "input_handle": "sharp"
-          }
-        }
-      }
-    },
-    {
-      "id": "e3ca595e-d0a4-4912-92b8-ed55a7d5069e",
-      "connection": {
-        "from": {
-          "type": "from_node",
-          "source": {
-            "node_id": "Flip#1",
-            "output_handle": "sharp"
-          }
-        },
-        "to": {
-          "type": "to_node",
-          "target": {
-            "node_id": "GreyScale#2",
-            "input_handle": "sharp"
-          }
-        }
-      }
-    },
-    {
       "id": "ca595ed0-a469-4252-b8ed-55a7d5069e0c",
       "selected": false,
       "connection": {
@@ -292,6 +257,50 @@
           "type": "to_node",
           "target": {
             "node_id": "Blur#1",
+            "input_handle": "sharp"
+          }
+        }
+      }
+    },
+    {
+      "style": {
+        "stroke": "linear-gradient(to right, #56A344, #56A344)"
+      },
+      "id": "c5c09c35-e19d-4b47-937e-80f9f6f8ce1e",
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "Flip#1",
+            "output_handle": "sharp"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "GreyScale#4",
+            "input_handle": "sharp"
+          }
+        }
+      }
+    },
+    {
+      "style": {
+        "stroke": "linear-gradient(to right, #56A344, #56A344)"
+      },
+      "id": "c09c35e1-9ddb-47d3-be80-f9f6f8ce1ea0",
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "Rotate#1",
+            "output_handle": "sharp"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "Sharpen#1",
             "input_handle": "sharp"
           }
         }

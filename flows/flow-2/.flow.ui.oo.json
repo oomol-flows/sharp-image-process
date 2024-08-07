@@ -1,83 +1,90 @@
 {
   "nodes": [
     {
-      "id": "ReadImage#1",
+      "id": "upload_to_oss#2",
       "contentWidth": 200,
       "selected": false,
       "dragging": false,
       "position": {
-        "x": 1079,
-        "y": 364
+        "x": 1379,
+        "y": 390.5
       },
       "positionAbsolute": {
-        "x": 1079,
-        "y": 364
+        "x": 1379,
+        "y": 395.5
       },
       "width": 214,
-      "height": 290
+      "height": 223
     },
     {
-      "id": "GreyScale#1",
+      "id": "ocr#1",
       "contentWidth": 200,
       "selected": false,
       "dragging": false,
       "position": {
-        "x": 1365,
-        "y": 403
+        "x": 1697.9999999999998,
+        "y": 522.5
+      },
+      "positionAbsolute": {
+        "x": 1697.9999999999998,
+        "y": 522.5
       },
       "width": 214,
-      "height": 290
+      "height": 176
     },
     {
-      "id": "Sharpen#2",
-      "contentWidth": 200,
+      "id": "markdown_preview#1",
+      "contentWidth": 444.9609375,
       "selected": false,
-      "dragging": false,
       "position": {
-        "x": 1716,
-        "y": 442
+        "x": 2002.4999999999998,
+        "y": 613.5
       },
-      "width": 214,
-      "height": 318
+      "width": 459,
+      "height": 127
     }
   ],
   "edges": [
     {
-      "id": "72ffdcdf-5084-4886-9101-89b9d01b4737",
-      "selected": false,
+      "style": {
+        "stroke": "linear-gradient(to right, #9CA0DF, #9CA0DF)"
+      },
+      "id": "cc4d6735-3e66-42f7-8bca-0b5b88e585b1",
       "connection": {
         "from": {
           "type": "from_node",
           "source": {
-            "node_id": "ReadImage#1",
-            "output_handle": "sharp"
+            "node_id": "upload_to_oss#2",
+            "output_handle": "url"
           }
         },
         "to": {
           "type": "to_node",
           "target": {
-            "node_id": "GreyScale#1",
-            "input_handle": "sharp"
+            "node_id": "ocr#1",
+            "input_handle": "url"
           }
         }
       }
     },
     {
-      "id": "ffdcdf50-84f8-46d1-8189-b9d01b4737ce",
-      "selected": false,
+      "style": {
+        "stroke": "linear-gradient(to right, #9CA0DF, #9CA0DF)"
+      },
+      "id": "4d67353e-6692-478b-8a0b-5b88e585b1c9",
       "connection": {
         "from": {
           "type": "from_node",
           "source": {
-            "node_id": "GreyScale#1",
-            "output_handle": "sharp"
+            "node_id": "ocr#1",
+            "output_handle": "content"
           }
         },
         "to": {
           "type": "to_node",
           "target": {
-            "node_id": "Sharpen#2",
-            "input_handle": "sharp"
+            "node_id": "markdown_preview#1",
+            "input_handle": "text"
           }
         }
       }

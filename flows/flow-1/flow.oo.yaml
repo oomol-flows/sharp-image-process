@@ -21,28 +21,14 @@ nodes:
           - node_id: ReadImage#1
             output_handle: sharp
       - handle: width
-        value: 465
+        value: 651
       - handle: height
         value: 500
-  - task: self::GreyScale
-    node_id: GreyScale#1
-    inputs_from:
-      - handle: sharp
-        from_node:
-          - node_id: ResizeImage#1
-            output_handle: sharp
-  - task: self::GreyScale
-    node_id: GreyScale#2
-    inputs_from:
-      - handle: sharp
-        from_node:
-          - node_id: Flip#1
-            output_handle: sharp
   - task: self::Rotate
     node_id: Rotate#1
     inputs_from:
       - handle: rotate
-        value: 237
+        value: 77
       - handle: sharp
         value:
         from_node:
@@ -65,10 +51,94 @@ nodes:
           - node_id: Flop#1
             output_handle: sharp
       - handle: sigma
-        value: 50
+        value: 14.5
   - task: self::ReadImage
     title: "ReadImage #1"
     node_id: ReadImage#1
     inputs_from:
       - handle: image
-        value: /oomol-storage/annie-spratt-Iju9-wylmLo-unsplash.jpg
+        value: /oomol-storage/image/unsplash.jpg
+  - task: self::GreyScale
+    node_id: GreyScale#4
+    inputs_from:
+      - handle: in
+        from_node:
+          - node_id: Flip#1
+            output_handle: sharp
+      - handle: sharp
+        from_node:
+          - node_id: Flip#1
+            output_handle: sharp
+  - task: self::Sharpen
+    node_id: Sharpen#1
+    inputs_from:
+      - handle: sharp
+        from_node:
+          - node_id: Rotate#1
+            output_handle: sharp
+      - handle: sigma
+        value: 3
+  - task:
+      ui:
+        default_width: 530
+      icon: ":skill-icons:typescript:"
+      inputs_def:
+        - handle: in
+          ignoreNull: true
+          value: ""
+          description: Input
+          json_schema:
+            contentMediaType: oomol/var
+            type:
+              - string
+              - number
+              - integer
+              - boolean
+              - object
+              - array
+              - "null"
+      outputs_def:
+        - handle: out
+          description: Output
+          json_schema:
+            contentMediaType: oomol/var
+            type:
+              - string
+              - number
+              - integer
+              - boolean
+              - object
+              - array
+              - "null"
+      executor:
+        name: nodejs
+        options:
+          language: typescript
+          source: >-
+            import type { Context } from "@oomol/types/oocana";
+
+
+            // "in", "out" is the default node key.
+
+            // Redefine the name and type of the node, change it manually below.
+
+            // Click on the gear(⚙) to configure the input output UI
+
+            type Inputs = Readonly<{ in: unknown }>;
+
+            type Outputs = Readonly<{ out: unknown }>;
+
+
+            export default async function(inputs: Inputs, context: Context<Inputs, Outputs>): Promise<Outputs> {
+              // // This API can help preview several types of files
+              // context.preview({
+              //   // type -> "image","video", "audio", "markdown", "table", "iframe"
+              //   type: "image",
+              //   data: payload,
+              // })
+              return { out: inputs };
+            };
+    title: "TypeScript #1"
+    node_id: +typescript#1
+    inputs_from:
+      []
