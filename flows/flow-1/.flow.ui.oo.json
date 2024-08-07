@@ -125,22 +125,6 @@
       },
       "width": 214,
       "height": 120
-    },
-    {
-      "id": "+typescript#1",
-      "contentWidth": 492.16796875,
-      "selected": true,
-      "dragging": false,
-      "position": {
-        "x": 898.1852664019061,
-        "y": -471
-      },
-      "positionAbsolute": {
-        "x": 898.1852664019061,
-        "y": -471
-      },
-      "width": 506,
-      "height": 466
     }
   ],
   "edges": [
