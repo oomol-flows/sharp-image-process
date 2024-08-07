@@ -1,33 +1,37 @@
-title: GreyScale
+inputs_def:
+  - handle: sharp
+    description: Input
+    json_schema:
+      contentMediaType: oomol/var
+      type:
+        - string
+        - number
+        - integer
+        - boolean
+        - object
+        - array
+        - "null"
+      ui:widget: any
+    value: ""
+outputs_def:
+  - handle: sharp
+    description: Output
+    json_schema:
+      contentMediaType: oomol/var
+      type:
+        - string
+        - number
+        - integer
+        - boolean
+        - object
+        - array
+        - "null"
+      ui:widget: any
+icon: ":skill-icons:typescript:"
+ui:
+  default_width: 530
 executor:
   name: nodejs
   options:
-    entry: index.ts
-inputs_def:
-  - handle: sharp
-    json_schema:
-      contentMediaType: oomol/var
-      type:
-        - string
-        - number
-        - integer
-        - boolean
-        - object
-        - array
-        - "null"
-      ui:widget: any
-    name: ""
-outputs_def:
-  - handle: sharp
-    json_schema:
-      contentMediaType: oomol/var
-      type:
-        - string
-        - number
-        - integer
-        - boolean
-        - object
-        - array
-        - "null"
-      ui:widget: any
-icon: /oomol-storage/icon.jpeg
+    spawn: false
+    entry: main.ts

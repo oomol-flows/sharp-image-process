@@ -12,6 +12,7 @@ inputs_def:
       maximum: 10
   - handle: sharp
     json_schema:
+      contentMediaType: oomol/var
       type:
         - string
         - number
@@ -20,7 +21,7 @@ inputs_def:
         - object
         - array
         - "null"
-      contentMediaType: oomol/var
+      ui:widget: any
 outputs_def:
   - handle: sharp
     json_schema:

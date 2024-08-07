@@ -1,24 +1,37 @@
 nodes:
-  - task: self::ReadImage
-    title: "ReadImage #1"
-    node_id: ReadImage#1
+  - task: alicloud::upload_to_oss
+    title: "Upload To OSS #2"
+    node_id: upload_to_oss#2
     inputs_from:
-      - handle: image
-        value: /oomol-storage/截屏2024-07-28 09.39.03.png
-  - task: self::GreyScale
-    title: "GreyScale #1"
-    node_id: GreyScale#1
+      - handle: region
+        value: oss-cn-hangzhou
+      - handle: accessKeyId
+        value: AliCloud,aliyun,AccessKey_ID
+      - handle: accessKeySecret
+        value: AliCloud,aliyun,AccessKey_Secret
+      - handle: bucket
+        value: oomol-flows
+      - handle: localfile
+        value: /oomol-storage/截屏2024-08-01 10.38.58.png
+  - task: alicloud::ocr
+    title: "OCR #1"
+    node_id: ocr#1
     inputs_from:
-      - handle: sharp
+      - handle: type
+        value: General
+      - handle: url
         from_node:
-          - node_id: ReadImage#1
-            output_handle: sharp
-  - task: self::Sharpen
-    node_id: Sharpen#2
+          - node_id: upload_to_oss#2
+            output_handle: url
+      - handle: accessKeyId
+        value: AliCloud,aliyun,AccessKey_ID
+      - handle: accessKeySecret
+        value: AliCloud,aliyun,AccessKey_Secret
+  - task: preview::markdown_preview
+    title: "Markdown Preview #1"
+    node_id: markdown_preview#1
     inputs_from:
-      - handle: sharp
+      - handle: text
         from_node:
-          - node_id: GreyScale#1
-            output_handle: sharp
-      - handle: sigma
-        value: 5
+          - node_id: ocr#1
+            output_handle: content
