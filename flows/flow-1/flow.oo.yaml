@@ -57,7 +57,10 @@ nodes:
     node_id: ReadImage#1
     inputs_from:
       - handle: image
-        value: /oomol-storage/image/unsplash.jpg
+        value: ""
+        from_node:
+          - node_id: downoload_to_local_address#1
+            output_handle: file_address
   - task: self::GreyScale
     node_id: GreyScale#4
     inputs_from:
@@ -78,3 +81,14 @@ nodes:
             output_handle: sharp
       - handle: sigma
         value: 3
+  - task: self::downoload_to_local_address
+    node_id: downoload_to_local_address#1
+    inputs_from:
+      - handle: in
+        value: ""
+      - handle: online_url
+        value: https://oomol-flows.oss-cn-hangzhou.aliyuncs.com/1723953196_unsplash.jpg
+      - handle: name
+        value: test_image.jpg
+      - handle: local_folder
+        value: /oomol-storage
