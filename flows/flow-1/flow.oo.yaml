@@ -21,14 +21,14 @@ nodes:
           - node_id: ReadImage#1
             output_handle: sharp
       - handle: width
-        value: 651
+        value: 1000
       - handle: height
         value: 500
   - task: self::Rotate
     node_id: Rotate#1
     inputs_from:
       - handle: rotate
-        value: 77
+        value: 60
       - handle: sharp
         value:
         from_node:
