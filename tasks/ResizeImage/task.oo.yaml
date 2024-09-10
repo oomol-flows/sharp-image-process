@@ -35,4 +35,4 @@ outputs_def:
         - array
         - "null"
       ui:widget: any
-icon: ./icon.jpeg
+icon: ":fa6-solid:crop-simple:currentColor:"

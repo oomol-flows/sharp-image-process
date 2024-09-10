@@ -27,7 +27,7 @@ outputs_def:
         - array
         - "null"
       ui:widget: any
-icon: ":skill-icons:typescript:"
+icon: ":fa6-solid:expand:currentColor:"
 ui:
   default_width: 530
 executor:

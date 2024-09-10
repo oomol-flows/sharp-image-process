@@ -1,0 +1,14 @@
+{
+  "oocana-log-panel": {
+    "viewMode": "events",
+    "sessionViewMode": "current"
+  },
+  "sharedBlockExplorerInit": false,
+  "designer/flow/flow-1": {
+    "viewport": {
+      "x": 524.4045441201727,
+      "y": 243.6285222274954,
+      "zoom": 0.2
+    }
+  }
+}
