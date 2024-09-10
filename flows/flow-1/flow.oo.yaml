@@ -59,8 +59,8 @@ nodes:
       - handle: image
         value: ""
         from_node:
-          - node_id: downoload_to_local_address#1
-            output_handle: file_address
+          - node_id: download_file#1
+            output_handle: file_path
   - task: self::GreyScale
     node_id: GreyScale#4
     inputs_from:
@@ -81,14 +81,13 @@ nodes:
             output_handle: sharp
       - handle: sigma
         value: 3
-  - task: self::downoload_to_local_address
-    node_id: downoload_to_local_address#1
+  - task: tools::download_file
+    title: "Download File #1"
+    node_id: download_file#1
     inputs_from:
-      - handle: in
-        value: ""
-      - handle: online_url
+      - handle: url
         value: https://oomol-flows.oss-cn-hangzhou.aliyuncs.com/1723953196_unsplash.jpg
-      - handle: name
-        value: test_image.jpg
-      - handle: local_folder
+      - handle: folder
         value: /oomol-storage
+      - handle: file_name
+        value: test_image.jpg

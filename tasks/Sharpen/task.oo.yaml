@@ -34,3 +34,4 @@ outputs_def:
         - array
         - "null"
       contentMediaType: oomol/var
+icon: ":fa6-solid:scissors:currentColor:"

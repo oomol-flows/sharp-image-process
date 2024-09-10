@@ -36,3 +36,4 @@ outputs_def:
         - array
         - "null"
       ui:widget: any
+icon: ":fa6-solid:arrows-rotate:currentColor:"
