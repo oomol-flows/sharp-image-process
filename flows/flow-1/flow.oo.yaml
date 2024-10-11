@@ -1,19 +1,19 @@
-nodes:
-  - task: self::Flop
+ nodes:
+  - task: sharp::flop
     node_id: Flop#1
     inputs_from:
       - handle: sharp
         from_node:
           - node_id: ReadImage#1
             output_handle: sharp
-  - task: self::Flip
+  - task: sharp::flip
     node_id: Flip#1
     inputs_from:
       - handle: sharp
         from_node:
           - node_id: ReadImage#1
             output_handle: sharp
-  - task: self::ResizeImage
+  - task: sharp::resize_image
     node_id: ResizeImage#1
     inputs_from:
       - handle: sharp
@@ -24,7 +24,7 @@ nodes:
         value: 1000
       - handle: height
         value: 500
-  - task: self::Rotate
+  - task: sharp::rotate
     node_id: Rotate#1
     inputs_from:
       - handle: rotate
@@ -34,7 +34,7 @@ nodes:
         from_node:
           - node_id: ResizeImage#1
             output_handle: sharp
-  - task: self::Rotate
+  - task: sharp::rotate
     node_id: Rotate#2
     inputs_from:
       - handle: sharp
@@ -43,7 +43,7 @@ nodes:
             output_handle: sharp
       - handle: rotate
         value: 0
-  - task: self::Blur
+  - task: sharp::blur
     node_id: Blur#1
     inputs_from:
       - handle: sharp
@@ -52,7 +52,7 @@ nodes:
             output_handle: sharp
       - handle: sigma
         value: 14.5
-  - task: self::ReadImage
+  - task: sharp::read_image
     title: "ReadImage #1"
     node_id: ReadImage#1
     inputs_from:
@@ -61,18 +61,7 @@ nodes:
         from_node:
           - node_id: download_file#1
             output_handle: file_path
-  - task: self::GreyScale
-    node_id: GreyScale#4
-    inputs_from:
-      - handle: in
-        from_node:
-          - node_id: Flip#1
-            output_handle: sharp
-      - handle: sharp
-        from_node:
-          - node_id: Flip#1
-            output_handle: sharp
-  - task: self::Sharpen
+  - task: sharp::sharpen
     node_id: Sharpen#1
     inputs_from:
       - handle: sharp
@@ -91,3 +80,11 @@ nodes:
         value: /oomol-storage
       - handle: file_name
         value: test_image.jpg
+  - task: sharp::gray_scale
+    title: "Gray Scale #1"
+    node_id: gray_scale#1
+    inputs_from:
+      - handle: sharp
+        from_node:
+          - node_id: Flip#1
+            output_handle: sharp
