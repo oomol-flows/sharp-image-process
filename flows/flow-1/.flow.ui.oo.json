@@ -14,7 +14,7 @@
         "y": -490.22901950752293
       },
       "width": 434,
-      "height": 237
+      "height": 256
     },
     {
       "id": "Flip#1",
@@ -30,7 +30,7 @@
         "y": 398.8682880491366
       },
       "width": 434,
-      "height": 237
+      "height": 256
     },
     {
       "id": "ResizeImage#1",
@@ -46,7 +46,7 @@
         "y": -1129.6648251415731
       },
       "width": 434,
-      "height": 297
+      "height": 316
     },
     {
       "id": "Rotate#1",
@@ -62,7 +62,7 @@
         "y": -1278.9400383802677
       },
       "width": 434,
-      "height": 267
+      "height": 286
     },
     {
       "id": "Rotate#2",
@@ -78,7 +78,7 @@
         "y": 49.56279773759573
       },
       "width": 434,
-      "height": 267
+      "height": 286
     },
     {
       "id": "Blur#1",
@@ -94,7 +94,7 @@
         "y": -409.0003706025595
       },
       "width": 434,
-      "height": 267
+      "height": 286
     },
     {
       "id": "ReadImage#1",
@@ -110,7 +110,7 @@
         "y": -418.38128768803
       },
       "width": 434,
-      "height": 237
+      "height": 256
     },
     {
       "id": "GreyScale#4",
@@ -142,7 +142,7 @@
         "y": -1339.4944371307993
       },
       "width": 434,
-      "height": 267
+      "height": 286
     },
     {
       "id": "download_file#1",
@@ -158,7 +158,13 @@
         "y": -400.9509489549365
       },
       "width": 434,
-      "height": 297
+      "height": 316
+    },
+    {
+      "id": "gray_scale#1",
+      "contentWidth": 200,
+      "width": 434,
+      "height": 256
     }
   ],
   "edges": [
@@ -331,32 +337,6 @@
       "style": {
         "stroke": "linear-gradient(to right, #56A344, #56A344)"
       },
-      "id": "c5c09c35-e19d-4b47-937e-80f9f6f8ce1e",
-      "connection": {
-        "from": {
-          "type": "from_node",
-          "source": {
-            "node_id": "Flip#1",
-            "output_handle": "sharp"
-          }
-        },
-        "to": {
-          "type": "to_node",
-          "target": {
-            "node_id": "GreyScale#4",
-            "input_handle": "sharp"
-          }
-        }
-      },
-      "gradientColor": [
-        "var(--edge-nodejs)",
-        "var(--edge-nodejs)"
-      ]
-    },
-    {
-      "style": {
-        "stroke": "linear-gradient(to right, #56A344, #56A344)"
-      },
       "id": "c09c35e1-9ddb-47d3-be80-f9f6f8ce1ea0",
       "connection": {
         "from": {
@@ -370,6 +350,29 @@
           "type": "to_node",
           "target": {
             "node_id": "Sharpen#1",
+            "input_handle": "sharp"
+          }
+        }
+      },
+      "gradientColor": [
+        "var(--edge-nodejs)",
+        "var(--edge-nodejs)"
+      ]
+    },
+    {
+      "id": "46d80624-b78d-4173-aa9f-8c946aad11c7",
+      "connection": {
+        "from": {
+          "type": "from_node",
+          "source": {
+            "node_id": "Flip#1",
+            "output_handle": "sharp"
+          }
+        },
+        "to": {
+          "type": "to_node",
+          "target": {
+            "node_id": "gray_scale#1",
             "input_handle": "sharp"
           }
         }
