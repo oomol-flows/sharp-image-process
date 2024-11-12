@@ -4,4 +4,6 @@ scripts:
   # eg: bootstrap: pip install pandas
   bootstrap: |
     pnpm install && pip install --user -r requirements.txt
-
+  dependencies:
+    sharp: 0.0.1
+    tools: 0.0.3
